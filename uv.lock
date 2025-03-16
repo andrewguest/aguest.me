@@ -295,7 +295,6 @@ dependencies = [
     { name = "gunicorn" },
     { name = "psycopg2" },
     { name = "python-dotenv" },
-    { name = "secure" },
     { name = "sqlmodel" },
     { name = "uvicorn" },
     { name = "uvicorn-worker" },
@@ -307,7 +306,6 @@ requires-dist = [
     { name = "gunicorn", specifier = ">=23.0.0" },
     { name = "psycopg2", specifier = ">=2.9.10" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
-    { name = "secure", specifier = ">=1.0.1" },
     { name = "sqlmodel", specifier = ">=0.0.24" },
     { name = "uvicorn", specifier = ">=0.34.0" },
     { name = "uvicorn-worker", specifier = ">=0.3.0" },
@@ -430,15 +428,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/5b/8a/71cfbf6bf6257ea785d1f030c22468f763eea1b3e5417620f2ba9abd6dca/rich_toolkit-0.13.2.tar.gz", hash = "sha256:fea92557530de7c28f121cbed572ad93d9e0ddc60c3ca643f1b831f2f56b95d3", size = 72288 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7e/1b/1c2f43af46456050b27810a7a013af8a7e12bc545a0cdc00eb0df55eb769/rich_toolkit-0.13.2-py3-none-any.whl", hash = "sha256:f3f6c583e5283298a2f7dbd3c65aca18b7f818ad96174113ab5bec0b0e35ed61", size = 13566 },
-]
-
-[[package]]
-name = "secure"
-version = "1.0.1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/70/57/5739d3872f706cf53bfa365ef6e85f5df7ec5ee82ce3ed11f9af41a76af1/secure-1.0.1.tar.gz", hash = "sha256:942c10b8cfbde9e3a7961cf17833c9139d6e14ee39d23428230e4b8c8bc2de26", size = 21282 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/f4/63/99c753d364c482e29f33ff63799680b37ea55c57cc879567a6bff650afcd/secure-1.0.1-py3-none-any.whl", hash = "sha256:f0bb7bb12c684e8e30026a5480833170197146163fcb61a80d1af1710c0478da", size = 26423 },
 ]
 
 [[package]]

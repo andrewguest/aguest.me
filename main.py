@@ -21,7 +21,6 @@ app = FastAPI(
     description="Website for projects.aguest.me domain",
     version="0.0.1",
 )
-# secure_headers = Secure.with_default_headers()
 
 # Middleware
 app.add_middleware(
@@ -36,13 +35,6 @@ app.add_middleware(
 templates = Jinja2Templates(directory="templates")
 
 
-# @app.middleware("http")
-# async def set_secure_headers(request, call_next):
-#     response = await call_next(request)
-#     await secure_headers.set_headers_async(response)
-#     return response
-
-
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     # Get the projects from the DB
@@ -52,9 +44,3 @@ async def index(request: Request):
     return templates.TemplateResponse(
         request=request, name="index.html", context={"projects": all_projects}
     )
-
-
-@app.get("/test")
-def test():
-    print("Testing")
-    return {"test": "test"}

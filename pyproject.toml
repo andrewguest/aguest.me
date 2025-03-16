@@ -8,7 +8,6 @@ dependencies = [
     "gunicorn>=23.0.0",
     "psycopg2>=2.9.10",
     "python-dotenv>=1.0.1",
-    "secure>=1.0.1",
     "sqlmodel>=0.0.24",
     "uvicorn>=0.34.0",
     "uvicorn-worker>=0.3.0",
