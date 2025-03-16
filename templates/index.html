@@ -1,0 +1,108 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AGuest projects</title>
+        <!-- HTMX -->
+        <!--
+        <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+        -->
+        <!-- daisyUI -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+        <!-- TailwindCSS -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="w-1/2 mx-auto p-4 text-center flex flex-col justify-start items-center pt-[24vh]">
+            <p class="text-6xl" id="title">Andrew's Projects</p>
+        </div>
+        
+        <div class="flex justify-center items-center mt-[6vh]" id="greeting">
+            <div class="flex flex-col items-start">
+                <p class="text-xl">Hey there! My name is Andrew and I'm a software developer.</p>
+                <p class="text-xl mt-2">I primarily use Python, but I'm currently learning Go and Dart (Flutter)</p>
+                <p class="text-xl mt-8">This table lists all of my projects for you to check out and play with.</p>
+                <p class="text-xl mt-2">Feel free to try out these projects, but please don't abuse them.</p>
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center mt-[6vh]">
+            <table class="table-auto">
+                <thead>
+                    <tr>
+                        <th class="border px-4 py-2 text-2xl">Name</th>
+                        <th class="border px-4 py-2 text-2xl">Description</th>
+                        <th class="border px-4 py-2 text-2xl">Tech stack</th>
+                        <th class="border px-4 py-2 text-2xl">Github repo</th>
+                        <th class="border px-4 py-2 text-2xl">URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for project in projects %}
+                    <tr>
+                        <td class="border px-4 py-2 text-xl whitespace-normal w-1/5">{{ project.name }}</td>
+                        <td class="border px-4 py-2 text-xl whitespace-normal w-1/5">{{ project.description }}</td>
+                        <td class="border px-4 py-2 text-xl whitespace-normal w-1/5">
+                            {% if project.frontend is not none %}
+                                Frontend: {{project.frontend}}
+                            {% else %}
+                                Frontend: N/A
+                            {% endif %}
+                            <br>
+                            <br>
+                            
+                            {% if project.backend is not none %}
+                            Backend: {{project.backend}}
+                            {% else %}
+                            Backend: N/A
+                            {% endif %}
+                            <br>
+                            <br>
+                            
+                            {% if project.database is not none %}
+                            Database: {{project.database}}
+                            {% else %}
+                            Database: N/A
+                            {% endif %}
+                        </td>
+                        <td class="border px-4 py-2 text-xl whitespace-normal w-1/5">{{ project.github_repo }}</td>
+                        <td class="border px-4 py-2 text-xl whitespace-normal w-1/5">
+                            <a class="text-blue-500 hover:text-red-500" href={{project.url}} target="_blank" rel="noopener noreferrer"> {{ project.url }} </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
+
+<style>
+    html {
+        background-color: #1a1d36;
+    }
+    p {
+        color: white;    
+    }
+    #title {
+        font-family: "VT323", monospace;
+    }
+    #greeting, th {
+        font-family: "Anonymous Pro", monospace;
+    }
+    th {
+        color: white;
+        font-size: 1.5rem
+        line-height: calc(2 / 1.5)
+    }
+    td {
+        color: white;
+        font-size: 1.25rem
+        line-height: calc(1.75 / 1.25)
+    }
+</style>
