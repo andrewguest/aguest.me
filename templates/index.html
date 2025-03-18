@@ -49,25 +49,25 @@
                         <td class="border px-4 py-2 text-xl whitespace-normal w-1/5">{{ project.description }}</td>
                         <td class="border px-4 py-2 text-xl whitespace-normal w-1/5">
                             {% if project.frontend is not none %}
-                                Frontend: {{project.frontend}}
+                                <b>Frontend:</b> {{project.frontend}}
                             {% else %}
-                                Frontend: N/A
+                                <b>Frontend:</b> N/A
                             {% endif %}
                             <br>
                             <br>
                             
                             {% if project.backend is not none %}
-                            Backend: {{project.backend}}
+                            <b>Backend:</b> {{project.backend}}
                             {% else %}
-                            Backend: N/A
+                            <b>Backend:</b> N/A
                             {% endif %}
                             <br>
                             <br>
                             
                             {% if project.database is not none %}
-                            Database: {{project.database}}
+                            <b>Database:</b> {{project.database}}
                             {% else %}
-                            Database: N/A
+                            <b>Database:</b> N/A
                             {% endif %}
                         </td>
                         <td class="border px-4 py-2 text-xl whitespace-normal w-1/5">

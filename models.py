@@ -1,10 +1,9 @@
 from typing import Optional
 
-from sqlmodel import Field, SQLModel
+from beanie import Document
 
 
-class ProjectModel(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
+class Projects(Document):
     name: str
     description: str
     frontend: Optional[str] = None
@@ -12,3 +11,6 @@ class ProjectModel(SQLModel, table=True):
     database: Optional[str] = None
     url: str
     github_repo: Optional[str] = None
+
+    class Settings:
+        name = "projects"

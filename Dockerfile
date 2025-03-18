@@ -8,10 +8,7 @@ LABEL authors="Andrew"
 COPY . /app
 WORKDIR /app
 
-RUN apt update && \
-    apt upgrade -y && \
-    apt install gcc libpq-dev build-essential -y && \
-    apt clean
+RUN apt update && apt upgrade -y
 
 # Install the project's dependencies
 RUN uv python install && \
