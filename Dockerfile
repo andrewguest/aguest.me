@@ -17,5 +17,17 @@ RUN uv python install && \
 
 EXPOSE 8000
 
-# We only need to run `gunicorn` as long as the `gunicorn.conf.py` file is present
-ENTRYPOINT ["uv", "run", "gunicorn"]
+# Granian workers
+ENV GRANIAN_WORKERS=2
+ENV GRANIAN_WORKERS_LIFETIME=86400
+ENV GRANIAN_RESPAWN_FAILED_WORKERS=true
+
+# Granian logging
+ENV GRANIAN_LOG_ACCESS_ENABLED=true
+ENV GRANIAN_LOG_LEVEL=debug
+
+# Granian loop
+ENV GRANIAN_LOOP=uvloop
+
+
+ENTRYPOINT ["uv", "run", "granian", "--interface", "asgi", "main:app", "--host", "0.0.0.0", "--port", "8000"]
